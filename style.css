@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('background.jpg') center/cover fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.invite-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  max-width: 400px;
+  width: 100%;
+  animation: slideIn 0.5s ease-out;
+  position: relative;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.love-message {
+  color: #ff4f4f;
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.intro {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.sushi-animation {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.sushi {
+  font-size: 3rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.sushi.delay {
+  animation-delay: 1.5s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.invite-card h1 {
+  color: #ff6f61;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.invite-card p {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.details {
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.details p {
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+button {
+  background: #ff6f61;
+  color: white;
+  border: none;
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  min-height: 44px;
+}
+
+button:hover {
+  background: #e85a4f;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2rem 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+  text-align: center;
+  max-width: 90vw;
+  width: 100%;
+  z-index: 1000;
+}
+
+.popup p {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Mobile-friendly overlay for popup */
+.popup::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: -1;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 480px) {
+  body {
+    padding: 0.5rem;
+    min-height: 100vh;
+  }
+
+  .invite-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .invite-card h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .invite-card p {
+    font-size: 0.95rem;
+  }
+
+  .love-message {
+    font-size: 1.1rem;
+  }
+
+  .sushi {
+    font-size: 2.5rem;
+  }
+
+  .sushi-animation {
+    gap: 15px;
+    margin-bottom: 1rem;
+  }
+
+  .details {
+    padding: 0.8rem;
+    margin: 1.2rem 0;
+  }
+
+  .details p {
+    font-size: 0.9rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .popup {
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+  }
+
+  .popup p {
+    font-size: 1.1rem;
+  }
+}
